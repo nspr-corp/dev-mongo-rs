@@ -1,0 +1,15 @@
+services:
+  rs:
+    build: .
+    container_name: "mongo-rs"
+    restart: "always"
+    ports:
+      - "${MONGO_PORT}:${MONGO_REPLICA_PORT}"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}
+      - MONGO_INITDB_DATABASE=${MONGO_DB}
+      - MONGO_REPLICA_HOST=${MONGO_REPLICA_HOST}
+      - MONGO_REPLICA_PORT=${MONGO_REPLICA_PORT}
+    volumes:
+      - ./data:/data/db
