@@ -75,7 +75,7 @@ Para levantar tu contenedor de MongoDB utilizando Docker Compose, ejecuta el sig
 - En **Linux**:
 
   ```sh
-  docker compose up -d
+  sudo docker compose up -d
   ```
 
 ## Configuración de Prisma
